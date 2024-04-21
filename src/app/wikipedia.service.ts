@@ -1,11 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
+interface WikipediaResponse {
+  query: {
+    search: {
+      title: string;
+      snippet: string;
+      pageid: number;
+    }[];
+  };
+}
 
 // start observable demo code unrelated to wikipedia search
 
 // import { Observable } from 'rxjs';
-// import { map } from 'rxjs/operators';
+
 
 // interface Car {
 //   year: number;
@@ -49,6 +59,7 @@ import { HttpClient } from '@angular/common/http';
 // end observable demo code unrelated to wikipedia search
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -57,7 +68,7 @@ export class WikipediaService {
   constructor(private http: HttpClient) {}
 
   public search(term: string) {
-    return this.http.get("https://en.wikipedia.org/w/api.php", {
+    return this.http.get<WikipediaResponse>("https://en.wikipedia.org/w/api.php", {
       params: {
         action: 'query',
         format: 'json',
@@ -67,6 +78,10 @@ export class WikipediaService {
         origin: '*'
       }
     }
+    ).pipe(
+      map((response) => {
+        return response.query.search;
+      })
     );
   }
 }
