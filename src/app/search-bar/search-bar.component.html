@@ -1,6 +1,8 @@
-<form action="" (submit)="onFormSubmit($event)">
+<div class="box">
+  <form action="" (submit)="onFormSubmit($event)">
 
-  <input type="text" aria-label="input" (input)="term = $event.target.value">
+    <input placeholder="Enter Wikipedia search term" class="input" type="text" aria-label="input"
+      (input)="term = $event.target.value">
 
-
-</form>
+  </form>
+</div>
