@@ -8,6 +8,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 export class SearchBarComponent implements OnInit {
   @Output() submitted = new EventEmitter<string>();
   term = '';
+  message = 'Search string cannot be empty. Please enter a search string.';
 
   constructor() { }
 
@@ -15,6 +16,10 @@ export class SearchBarComponent implements OnInit {
   }
 
   onFormSubmit(event: any) {
+    if (this.term === ''|| this.term === null || this.term === undefined) {
+      alert(this.message);
+      return;
+    }
     event.preventDefault();
     this.submitted.emit(this.term);
   }

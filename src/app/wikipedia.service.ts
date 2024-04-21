@@ -1,5 +1,54 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
+
+// start observable demo code unrelated to wikipedia search
+
+// import { Observable } from 'rxjs';
+// import { map } from 'rxjs/operators';
+
+// interface Car {
+//   year: number;
+//   color: string;
+//   running: boolean;
+//   make: {
+//     name: string;
+//     dateCreated: number;
+//   };
+// }
+
+
+
+// const observable = new Observable<Car>((observer) => {
+//   observer.next({
+//     year: 2000,
+//     color: 'red',
+//     running: true,
+//     make: {
+//       name: 'Toyota',
+//       dateCreated: 1999
+//     }
+
+//   });
+
+// }).pipe(
+//   map(car => {
+//     if (car.make.name) {
+//       return (car.make.name);
+//     } else {;
+//       return "Car not found";
+//     }
+
+//   })
+// );
+
+// observable.subscribe(value => {
+//   console.log(value); // 1
+// });
+
+// end observable demo code unrelated to wikipedia search
+
+
 @Injectable({
   providedIn: 'root'
 })
