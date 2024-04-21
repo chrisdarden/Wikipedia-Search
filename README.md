@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
 
+This app is used to understand how Angular protects the user from XSS by implimenting the Angular's automatic escaping of template expressions and blocks malicious code from being run when Angular accepts outside code being returned from an API.
+
 ## RUNNING PROGRAM
 
 Run `nvm use 16` and download Node 16 to compile this program successfully.
