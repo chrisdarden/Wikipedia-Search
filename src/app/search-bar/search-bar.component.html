@@ -1,5 +1,5 @@
 <div class="box">
-  <form action="" (submit)="onFormSubmit($event)">
+  <form (submit)="onFormSubmit($event)">
 
     <input placeholder="Enter Wikipedia search term" class="input" type="text" aria-label="input"
       (input)="term = $event.target.value">
